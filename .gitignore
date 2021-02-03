@@ -1,0 +1,21 @@
+[Ll]ibrary/
+[Ll]ogs/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+.vs
+.idea/
+*/Assets/Plugins/Editor/
+*/Assets/Plugins/Editor.meta
+*.csproj.meta
+**/Unity Recorder*
+UserSettings/EditorUserSettings.asset
