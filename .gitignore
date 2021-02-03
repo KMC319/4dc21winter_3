@@ -19,3 +19,5 @@
 *.csproj.meta
 **/Unity Recorder*
 UserSettings/EditorUserSettings.asset
+Packages/
+*.vsconfig
