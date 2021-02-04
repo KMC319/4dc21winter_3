@@ -11,17 +11,21 @@ using Random = UnityEngine.Random;
 namespace Puzzle {
     public class LiquidSpawner : MonoBehaviour {
         private ObjectPool<Liquid> pool;
+        private ObjectPool<ParticleSystem> particlePool;
         [SerializeField] private Liquid originalLiquid;
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private int size;
         [SerializeField] private float spawnRate;
         [SerializeField] private RockSpawner rockSpawner;
+        [SerializeField] private ParticleSystem effect;
         private CancellationTokenSource cts = new CancellationTokenSource();
         private List<Liquid> activeLiquid = new List<Liquid>();
 
         private void Start() {
             pool = new ObjectPool<Liquid>(originalLiquid, spawnPoint);
             pool.Preload(originalLiquid, size);
+            particlePool = new ObjectPool<ParticleSystem>(effect, transform);
+            particlePool.Preload(effect, 100);
             StartSpawn(100);
             rockSpawner.OnSpawnRock
                 .Subscribe(_ => DestroyLiquid())
@@ -66,8 +70,17 @@ namespace Puzzle {
                 .AddTo(obj);
             obj.OnAnnihilation
                 .First()
-                .Subscribe(pos => rockSpawner.CreateRock(pos))
+                .Subscribe(AnnihilationLiquid)
                 .AddTo(obj.Disposable);
+        }
+
+        private void AnnihilationLiquid(Vector3 pos) {
+            var e = particlePool.GetObject(effect, pos);
+            e.OnDisableAsObservable()
+                .First()
+                .Subscribe(_ => particlePool.ReturnObject(e))
+                .AddTo(e);
+            rockSpawner.CreateRock(pos);
         }
 
         private void OnDestroy() {
