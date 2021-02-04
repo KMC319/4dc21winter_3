@@ -1,6 +1,5 @@
 using System;
 using UniRx;
-using Unity.Mathematics;
 using UnityEngine;
 
 namespace Puzzle {
