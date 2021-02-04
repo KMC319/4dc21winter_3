@@ -12,11 +12,13 @@ public class CaveatScript : MonoBehaviour
     public bool danger;
     public GameObject knifePrefab;
 
+    public float timer = 15.0f;
+
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("Blink");
-
+        Destroy(this.gameObject, timer);
     }
 
     // Update is called once per frame
@@ -45,7 +47,7 @@ public class CaveatScript : MonoBehaviour
     {
         //knifeをインスタンス化する(生成する)
         GameObject knife = Instantiate(knifePrefab);
-        //生成した敵の座標を決定する(現状X=0,Y=10,Z=20の位置に出力)
-        knife.transform.position = new Vector2(-1165, -24);
+        //生成した敵の座標を決定する
+        knife.transform.position = new Vector2(this.gameObject.transform.position.x-500, this.gameObject.transform.position.y);
     }
 }
