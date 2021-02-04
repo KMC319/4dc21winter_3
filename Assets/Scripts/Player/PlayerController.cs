@@ -10,29 +10,30 @@ public class PlayerController : MonoBehaviour
     public float jumppower = 10f;
     private Vector2 velocity;
     [SerializeField] ContactFilter2D filter2d;
-}
+
 
 
     // Update is called once per frame
     void Update()
     {
         //move
-        transform.Translate(Imput.GetAxisRaw(
+        transform.Translate(Input.GetAxisRaw(
             "Horizontal") * speed * Time.deltaTime, 0, 0);
         transform.position = new Vector2(Mathf.Clamp(
             transform.position.x, -moveableRange, moveableRange),
-            transform.posotion.y);
+            transform.position.y);
 
         //jump
-        if(Input.GetKeyDown(KeyCode.Shift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             rigid2d.AddForce(transform.up * jumppower);
         }
 
         //jump length reset
-        if(GetComponent<Rigidbody2D>().IsTouching(filter2d))
+        if (GetComponent<Rigidbody2D>().IsTouching(filter2d))
         {
             rigid2d = GetComponent<Rigidbody2D>();
             rigid2d.velocity = Vector2.zero;
         }
     }
+}
