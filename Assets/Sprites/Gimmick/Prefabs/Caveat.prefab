@@ -100,3 +100,4 @@ MonoBehaviour:
   danger: 0
   knifePrefab: {fileID: 377493636818891761, guid: 47efaeae9726c574ba86797d8217aaba, type: 3}
   timer: 15
+  Camera: {fileID: 0}

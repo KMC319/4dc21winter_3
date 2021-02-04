@@ -12,6 +12,8 @@ public class KnifeManager : MonoBehaviour
     public Vector2[] CaveatPosition;
     public int CaveatNum;
 
+    public GameObject Camera;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +28,9 @@ public class KnifeManager : MonoBehaviour
         if (time > interval)
         {
             //meteorをインスタンス化する(生成する)
-            GameObject meteor = Instantiate(CaveatPrefab);
-            //生成した敵の座標を決定する(現状X=0,Y=10,Z=20の位置に出力)
-            meteor.transform.position = CaveatPosition[CaveatNum];
+            GameObject caveat = Instantiate(CaveatPrefab);
+            //生成した敵の座標を決定する
+            caveat.transform.position = new Vector2(Camera.transform.position.x+ CaveatPosition[CaveatNum].x, CaveatPosition[CaveatNum].y);
             //経過時間を初期化して再度時間計測を始める
             time = 0f;
             interval = Random.Range(3f, 10f);

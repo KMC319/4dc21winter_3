@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 414bb4af922a84f4dad1a7f9c63dfdfe
+guid: 5057ccde3579d094d9f347c07cf44716
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - knifePrefab: {instanceID: 0}
-  - Camera: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
