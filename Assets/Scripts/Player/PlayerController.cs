@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         //move
         transform.Translate(Imput.GetAxisRaw(
-            "Horizontal") * speed * Time.delaTime, 0, 0);
+            "Horizontal") * speed * Time.deltaTime, 0, 0);
         transform.position = new Vector2(Mathf.Clamp(
             transform.position.x, -moveableRange, moveableRange),
             transform.posotion.y);
