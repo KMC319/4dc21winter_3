@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: 8706412774493506916
     second: 4dc_2021_1_0
+  - first:
+      213: -2871785679659742972
+    second: 4dc_2021_1_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -110,6 +113,27 @@ TextureImporter:
       bones: []
       spriteID: 46dcb933a4463d870800000000000000
       internalID: 8706412774493506916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4dc_2021_1_1
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 2138
+        width: 1052
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 409c3d4c32e5528d0800000000000000
+      internalID: -2871785679659742972
       vertices: []
       indices: 
       edges: []
