@@ -1065,7 +1065,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451547001}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1335, y: 206, z: 0}
+  m_LocalPosition: {x: 694, y: 206, z: 0}
   m_LocalScale: {x: 500, y: 50, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1607,6 +1607,7 @@ MonoBehaviour:
   size: 1000
   spawnRate: 0.05
   rockSpawner: {fileID: 1783494174}
+  effect: {fileID: 2988930665423120520, guid: 89dc0663d66ec3a48b4c3cf197f26e09, type: 3}
 --- !u!4 &1055053985
 Transform:
   m_ObjectHideFlags: 0
@@ -1929,7 +1930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3c9c17bce24a92ac4c97a3e2747485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  border: 100
+  border: 85
   rock: {fileID: 782683970110710748, guid: d9ea455bb47cd5144acc32fb5519e01b, type: 3}
 --- !u!4 &1783494175
 Transform:
@@ -1993,6 +1994,7 @@ MonoBehaviour:
   size: 1000
   spawnRate: 0.05
   rockSpawner: {fileID: 1783494174}
+  effect: {fileID: 2988930665423120520, guid: 89dc0663d66ec3a48b4c3cf197f26e09, type: 3}
 --- !u!1 &1915389455
 GameObject:
   m_ObjectHideFlags: 0
