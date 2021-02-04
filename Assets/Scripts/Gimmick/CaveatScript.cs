@@ -14,17 +14,21 @@ public class CaveatScript : MonoBehaviour
 
     public float timer = 15.0f;
 
+    public GameObject Camera;
+
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("Blink");
         Destroy(this.gameObject, timer);
+        Camera = GameObject.FindWithTag("MainCamera");
     }
 
     // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime; time += Time.deltaTime;
+        this.gameObject.transform.position= new Vector2(Camera.transform.position.x -787, this.gameObject.transform.position.y);
     }
     IEnumerator Blink()
     {
