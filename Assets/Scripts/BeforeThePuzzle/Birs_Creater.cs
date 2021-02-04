@@ -24,8 +24,5 @@ public class Birs_Creater : MonoBehaviour
         }
         
     }
-   public void Dead()
-    {
-        Destroy(this.gameObject);
-    }
+  
 }
