@@ -27,6 +27,13 @@ namespace Puzzle {
             gameObject.SetActive(false);
         }
 
+        private void Update() {
+            var pos = transform.position;
+            if (Mathf.Abs(pos.x) >= 2000 || Mathf.Abs(pos.y) >= 700) {
+                gameObject.SetActive(false);
+            }
+        }
+
         private void OnDisable() {
             cts.Cancel();
             Disposable.Clear();

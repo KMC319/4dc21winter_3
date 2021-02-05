@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: d766b0fadd191d3468eb8e0f36b69ca0
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5291936846724624495
+    second: 4dc_2021_2_0
+  - first:
+      213: 8031137489441413496
+    second: 4dc_2021_2_1
+  - first:
+      213: -1058718046683065829
+    second: 4dc_2021_2_2
+  - first:
+      213: 1635104124007521428
+    second: 4dc_2021_2_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -89,7 +101,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: 4dc_2021_2_0
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1905
+        width: 1684
+        height: 2099
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f8d2dc9734f86b0800000000000000
+      internalID: -5291936846724624495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4dc_2021_2_1
+      rect:
+        serializedVersion: 2
+        x: 2094
+        y: 2103
+        width: 751
+        height: 612
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8795a70fef4547f60800000000000000
+      internalID: 8031137489441413496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4dc_2021_2_3
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 131
+        width: 1835
+        height: 1647
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c9e32a98e01b610800000000000000
+      internalID: 1635104124007521428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

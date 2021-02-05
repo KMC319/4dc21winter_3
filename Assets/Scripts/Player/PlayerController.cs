@@ -7,59 +7,78 @@ public class PlayerController : MonoBehaviour
 
     public GroundCheck ground;
 
-    public float speed = 8f;
-    public float moveableRange = 5.5f;
-    public float jumppower = 10f;
+    public float speed = 80.0f;
+    public float gravity = 3.0f;
+    public float jumppower = 10.0f;
     public float accel = 0.0f;
 
-    private Animator anim = null;
     private Rigidbody2D rb = null;
-    [SerializeField] ContactFilter2D filter2d;
+
+
+    private bool isGround = false;
+    private bool isJump = false;
+
 
     void Start()
     {
-        anim = GetComponent<Animotor>();
-        rb = GetComponent < Rigidbody2D.();
+        rb = GetComponent<Rigidbody2D>();
     }
+
+
 
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        //get judge ground
+        isGround = ground.IsGround();
+
         //move and stay
         float horizontalKey = Input.GetAxis("Horizontal");
+        float jumpKey = Input.GetAxis("Vertical");
         float xSpeed = 0.0f;
-        if(horizontalKey>0)
+        float ySpeed = rb.velocity.y;
+
+        if (horizontalKey > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
-            anim.SetBool("move",true);
+            transform.localScale = new Vector3(1, 1, 1)*0.3f;
             xSpeed = speed + accel;
         }
         else if (horizontalKey < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
-            anim.SetBool("move", true);
+            transform.localScale = new Vector3(-1, 1, 1)*0.3f;
             xSpeed = -speed - accel;
         }
         else
         {
-            anim.SetBool("move", false);
             xSpeed = 0.0f;
         }
-        rb.velocity = new Vector2(xSpeed, rb.velocity.y)
+
+        rb.velocity = new Vector2(xSpeed, ySpeed);
+
 
         //jump
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+
+        if (isGround)
         {
-            rigid2d.AddForce(transform.up * jumppower);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                isJump = true;
+            }
+            else
+            {
+                isJump = false;
+            }
+        }
+        if (isJump)
+        {
+            ySpeed = jumppower + (accel / 2);
+            rb.velocity = new Vector2(xSpeed, ySpeed);
+            isJump = false;
         }
 
-        //jump length reset
-        if (GetComponent<Rigidbody2D>().IsTouching(filter2d))
-        {
-            rigid2d = GetComponent<Rigidbody2D>();
-            rigid2d.velocity = Vector2.zero;
-        }
 
     }
+
+
 }

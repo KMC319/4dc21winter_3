@@ -5,7 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - belt
+<<<<<<< HEAD
   - meteo
+=======
+  - Ground
+>>>>>>> 4433de4fceda025b862a6d40fbf8f26a97c51104
   layers:
   - Default
   - TransparentFX
@@ -15,8 +19,8 @@ TagManager:
   - UI
   - Lava
   - Ground
-  - 
-  - 
+  - Liquid
+  - Wall
   - 
   - 
   - 
