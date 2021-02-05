@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//player no  ashimoto ni  korewo ireta object wo secchi
+//player no  atama ni  korewo ireta object wo secchi
 
-public class GroundCheck : MonoBehaviour
+public class HeadCheck : MonoBehaviour
 {
     private string groundTag = "Ground";
     private bool isGround = faise;
@@ -13,11 +13,11 @@ public class GroundCheck : MonoBehaviour
     //returning method to judge
     public bool IsGround()
     {
-        if(isGroundEnter||isGroundStay)
+        if (isGroundEnter || isGroundStay)
         {
             isGround = true;
         }
-        else if(isGroundExit)
+        else if (isGroundExit)
         {
             isGround = false;
         }
@@ -29,7 +29,7 @@ public class GroundCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == groundTag)
+        if (collision.tag == groundTag)
         {
             isGroundEnter = true;
         }
