@@ -158,7 +158,7 @@ MonoBehaviour:
   ground: {fileID: 847502004}
   speed: 800
   gravity: 200
-  jumppower: 500
+  jumppower: 800
   accel: 0
 --- !u!212 &423403207
 SpriteRenderer:
