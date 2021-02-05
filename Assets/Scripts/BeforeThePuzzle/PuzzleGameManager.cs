@@ -6,8 +6,11 @@ using UnityEngine.UI;
 public class PuzzleGameManager : MonoBehaviour
 {
     public  int Chicken_count = 5;
+    public int Yakitori_count = 0;
     public GameObject Chicken_Number;
+    public GameObject Yakitori_Number;
     public static int a;
+    public static int b;
    
     // Start is called before the first frame update
     void Start()
@@ -25,7 +28,11 @@ public class PuzzleGameManager : MonoBehaviour
         Text Chicken_text = Chicken_Number.GetComponent<Text>();
         Chicken_text.text = "Å~" + Chicken_count;
 
+        Text Yakitori_text = Yakitori_Number.GetComponent<Text>();
+        Yakitori_text.text = "Å~" + Yakitori_count;
+
         a = Chicken_count;
+        b = Yakitori_count;
     }
 
     public static int getA()

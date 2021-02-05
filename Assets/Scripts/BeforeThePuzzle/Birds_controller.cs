@@ -17,5 +17,6 @@ public class Birds_controller : MonoBehaviour
         Destroy(this.gameObject);
         PuzzleGameManager gameManager = GameObject.Find("PuzzleGameManager").GetComponent<PuzzleGameManager>();
         gameManager.Chicken_count--;
+        gameManager.Yakitori_count++;
     }
 }
