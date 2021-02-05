@@ -12,6 +12,7 @@ public class Birs_Creater : MonoBehaviour
     void Start()
     {
         
+        Instantiate(Birds, transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame

@@ -23,7 +23,7 @@ namespace Puzzle {
 
         private void OnTriggerEnter2D(Collider2D other) {
             if(isEndlessWater) return;
-            if (other.GetComponent<Water>() != null) {
+            if (other.GetComponentInParent<Water>() != null) {
                 isEndlessWater = true;
             }
         }
