@@ -15,18 +15,24 @@ namespace Puzzle {
         [SerializeField] private Liquid originalLiquid;
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private int size;
+        [SerializeField] private int startSize;
         [SerializeField] private float spawnRate;
         [SerializeField] private RockSpawner rockSpawner;
         [SerializeField] private ParticleSystem effect;
         private CancellationTokenSource cts = new CancellationTokenSource();
-        private List<Liquid> activeLiquid = new List<Liquid>();
+        private readonly ReactiveCollection<Liquid> activeLiquid = new ReactiveCollection<Liquid>();
+        public IReadOnlyReactiveCollection<Liquid> ActiveLiquid => activeLiquid;
+
+        private readonly Subject<Liquid> onSpawnLiquid = new Subject<Liquid>();
+        public IObservable<Liquid> OnSpawnLiquid => onSpawnLiquid;
+        
 
         private void Start() {
             pool = new ObjectPool<Liquid>(originalLiquid, spawnPoint);
             pool.Preload(originalLiquid, size);
             particlePool = new ObjectPool<ParticleSystem>(effect, transform);
             particlePool.Preload(effect, 100);
-            StartSpawn(100);
+            StartSpawn(startSize);
             rockSpawner.OnSpawnRock
                 .Subscribe(_ => DestroyLiquid())
                 .AddTo(gameObject);
@@ -72,6 +78,7 @@ namespace Puzzle {
                 .First()
                 .Subscribe(AnnihilationLiquid)
                 .AddTo(obj.Disposable);
+            onSpawnLiquid.OnNext(obj);
         }
 
         private void AnnihilationLiquid(Vector3 pos) {

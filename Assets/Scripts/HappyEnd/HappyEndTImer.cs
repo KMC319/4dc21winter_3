@@ -5,9 +5,14 @@ using UnityEngine;
 public class HappyEndTImer : MonoBehaviour
 {
     public GameObject mainText;
+
+    public AudioClip sound1;
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         Invoke("ShowText",3f);
     }
 
@@ -18,6 +23,8 @@ public class HappyEndTImer : MonoBehaviour
     }
     void ShowText()
     {
+        audioSource.Play();
+        audioSource.loop = true;
         mainText.SetActive(true);
     }
 }
