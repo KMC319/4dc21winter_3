@@ -14,11 +14,7 @@ public class Birds_controller : MonoBehaviour {
             Dead();
         }
     }
-<<<<<<< HEAD
-    public  void Dead()
-=======
     public void Dead(PlayerDeadType deadType = PlayerDeadType.Hot) 
->>>>>>> 4433de4fceda025b862a6d40fbf8f26a97c51104
     {
         if(isDead) return;
         isDead = true;
