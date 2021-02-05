@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public GroundCheck ground;
-    public GroundCheckl head;
+    public GroundCheck head;
 
     public float speed = 8.0f;
     public float gravity = 3.0;
@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animotor>();
-        rb = GetComponent < Rigidbody2D>;
+        anim = GetComponen <Animotor>();
+        rb = GetComponent<Rididbody2D>();
     }
 
 

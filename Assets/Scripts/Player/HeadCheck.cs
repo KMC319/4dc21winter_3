@@ -9,7 +9,6 @@ public class HeadCheck : MonoBehaviour
     private string groundTag = "Ground";
     private bool isGround = faise;
     private bool isGroundEnter, isGroundStay, isGroundExit;
-
     //returning method to judge
     public bool IsGround()
     {
