@@ -8,8 +8,11 @@ using System.Linq;
 public class GameOver : MonoBehaviour
 {
     public GameObject Cool_text;
-    private static readonly string[] COMMENTS = new string[] {"飛べないわけではない。まだ飛ばないだけ。\nIt's not that I can't fly. It just doesn't fly yet.",
-    "aaaaaaaa","bbbbbbbb","ccccccc","ddddddd",};
+    private static readonly string[] COMMENTS = new string[] {"飛べない鶏はただの鶏肉だ\nA chicken that can't fly is just a chicken. ",
+    "そこのお前！鶏肉100gあたりに含まれる脂質は鶏肉100g分だぜ\nHey, you! That's 100 grams of fat in every 100 grams of chicken.",
+        "で、俺が料理されたってわけ\nAnd then they cooked me.","鶏肉、下から見るか横から見るか\nChicken, viewed from below or from the side",
+        "鳥柱、鶏肉の呼吸、壱の型、鶏！！\nBird pillar, chicken breath, type one, chicken!","長男だったら我慢できたけど、次男だから我慢できなかった\nI could  was my first son, but I couldn't because my second son.",
+    };
     // Start is called before the first frame update
     void Start()
     {

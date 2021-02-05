@@ -12,6 +12,7 @@ public class PuzzleGameManager : MonoBehaviour
     public GameObject Yakitori_Number;
     public static int a;
     public static int b;
+
    
     // Start is called before the first frame update
     void Start()
@@ -39,5 +40,10 @@ public class PuzzleGameManager : MonoBehaviour
     public static int getA()
     {
         return a;
+    }
+
+    public static int getB()
+    {
+        return b;
     }
 }

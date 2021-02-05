@@ -12,7 +12,7 @@ public class Birds_controller : MonoBehaviour
             Dead();
         }
     }
-    public void Dead()
+    public  void Dead()
     {
         Destroy(this.gameObject);
         PuzzleGameManager gameManager = GameObject.Find("PuzzleGameManager").GetComponent<PuzzleGameManager>();
