@@ -5,16 +5,18 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rigid2d;
+
     public float speed = 8f;
     public float moveableRange = 5.5f;
     public float jumppower = 10f;
+    public float accel = 0.0f;
     private Vector2 velocity;
     [SerializeField] ContactFilter2D filter2d;
 
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //move
         transform.Translate(Input.GetAxisRaw(
@@ -26,7 +28,7 @@ public class PlayerController : MonoBehaviour
         //jump
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            rigid2d.AddForce(transform.up * jumppower);
+            rigid2d.AddForce(transform.up * (jumppower + accel));
         }
 
         //jump length reset
@@ -35,5 +37,6 @@ public class PlayerController : MonoBehaviour
             rigid2d = GetComponent<Rigidbody2D>();
             rigid2d.velocity = Vector2.zero;
         }
+
     }
 }
