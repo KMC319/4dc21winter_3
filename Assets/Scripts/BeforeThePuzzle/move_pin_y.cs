@@ -34,7 +34,7 @@ public class move_pin_y : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if ((transform.position.y - startPos.y) * Mathf.Sign(transform.lossyScale.y) >= 0) {
+        if ((transform.position.y - startPos.y) * Mathf.Sign(transform.lossyScale.y) <= 0) {
             rb.velocity = new Vector3(0, Mathf.Sign(Input.GetAxisRaw("Mouse Y")) * 200, 0);
         }
     }
