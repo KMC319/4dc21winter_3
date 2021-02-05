@@ -2,18 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HappyEndTImer : MonoBehaviour
+public class InHouse : MonoBehaviour
 {
-    public GameObject mainText;
-
     public AudioClip sound1;
     AudioSource audioSource;
-
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        Invoke("ShowText",3f);
     }
 
     // Update is called once per frame
@@ -21,10 +17,11 @@ public class HappyEndTImer : MonoBehaviour
     {
         
     }
-    void ShowText()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        audioSource.Play();
-        audioSource.loop = true;
-        mainText.SetActive(true);
+        if(collision.tag=="Player")
+        {
+            audioSource.PlayOneShot(sound1);
+        }
     }
 }
