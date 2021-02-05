@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         if(isGround)
         {
             jumpCount = 0;
-            if(Input.GetKeyDown(KeyCode.LeftShift)
+            if(Input.GetKeyDown(KeyCode.LeftShift))
             {
                 isJump = true;
             }
