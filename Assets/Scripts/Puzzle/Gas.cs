@@ -47,7 +47,7 @@ namespace Puzzle {
         }
 
         private void OnTriggerEnter2D(Collider2D other) {
-            if (!isDissolve && other.gameObject.TryGetComponent<Water>(out _)) {
+            if (!isDissolve && other.gameObject.GetComponentInParent<Water>()) {
                 isDissolve = true;
                 DissolveAll();
             }

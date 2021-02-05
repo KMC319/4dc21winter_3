@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Puzzle {
@@ -13,7 +14,7 @@ namespace Puzzle {
 
         private void OnTriggerEnter2D(Collider2D other) {
             if (other.TryGetComponent<Birds_controller>(out var bird)) {
-                bird.Dead();
+                bird.Dead(PlayerDeadType.Cold);
             }
         }
     }

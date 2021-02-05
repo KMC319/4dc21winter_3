@@ -9,6 +9,9 @@ namespace Puzzle {
                 once = true;
                 b.Break().Forget();
             }
+            if (other.gameObject.TryGetComponent<Birds_controller>(out var bird)) {
+                bird.Dead(PlayerDeadType.Cold);
+            }
         }
     }
 }

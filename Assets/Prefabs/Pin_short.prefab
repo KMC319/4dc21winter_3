@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5547874060364796980}
   - component: {fileID: 3832280783857176623}
   - component: {fileID: 5611973264419003799}
-  - component: {fileID: 2120404790}
+  - component: {fileID: 731802933829492222}
+  - component: {fileID: 70182533240836378}
   m_Layer: 9
   m_Name: Pin_short
   m_TagString: Untagged
@@ -137,7 +138,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 129, y: 64}
   m_EdgeRadius: 0
---- !u!114 &2120404790
+--- !u!114 &731802933829492222
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,6 +147,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 5860510709588243073}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3036ef81683eb364db6591f28e467fc6, type: 3}
+  m_Script: {fileID: 11500000, guid: a78ef23c43b5e1a48bd14653f20168a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &70182533240836378
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5860510709588243073}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
