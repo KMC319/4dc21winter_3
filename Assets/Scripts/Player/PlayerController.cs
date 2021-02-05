@@ -6,27 +6,25 @@ public class PlayerController : MonoBehaviour
 {
 
     public GroundCheck ground;
-    public GroundCheck head;
 
-    public float speed = 8.0f;
+    public float speed = 80.0f;
     public float gravity = 3.0f;
     public float jumppower = 10.0f;
-    public float jumpCount;
-    public const int jumpMax = 10;
     public float accel = 0.0f;
 
-    private Animator anim = null;
     private Rigidbody2D rb = null;
 
+
     private bool isGround = false;
-    private bool isHead = false;
     private bool isJump = false;
+
 
     void Start()
     {
-        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
+
+
 
 
     // Update is called once per frame
@@ -34,55 +32,53 @@ public class PlayerController : MonoBehaviour
     {
         //get judge ground
         isGround = ground.IsGround();
-        isHead = head.IsGround();
 
         //move and stay
         float horizontalKey = Input.GetAxis("Horizontal");
         float jumpKey = Input.GetAxis("Vertical");
         float xSpeed = 0.0f;
-        float ySpeed = -gravity;
+        float ySpeed = rb.velocity.y;
 
         if (horizontalKey > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
-            anim.SetBool("move", true);
+            transform.localScale = new Vector3(1, 1, 1)*0.3f;
             xSpeed = speed + accel;
         }
         else if (horizontalKey < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
-            anim.SetBool("move", true);
+            transform.localScale = new Vector3(-1, 1, 1)*0.3f;
             xSpeed = -speed - accel;
         }
         else
         {
-            anim.SetBool("move", false);
             xSpeed = 0.0f;
         }
-        anim.SetBool("jump", isJump);
-        anim.SetBool("ground", isGround);
+
         rb.velocity = new Vector2(xSpeed, ySpeed);
 
+
         //jump
-        
-        if(isGround)
+
+        if (isGround)
         {
-            jumpCount = 0;
-            if(Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 isJump = true;
             }
+            else
+            {
+                isJump = false;
+            }
         }
-
         if (isJump)
         {
-            ySpeed = jumppower + (accel / 2) - (float)0.5 * jumpCount;
-            if (jumpCount < jumpMax)
-            {
-                jumpCount++;
-            }
+            ySpeed = jumppower + (accel / 2);
+            rb.velocity = new Vector2(xSpeed, ySpeed);
             isJump = false;
         }
 
+
     }
+
+
 }
