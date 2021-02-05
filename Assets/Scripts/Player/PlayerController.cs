@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 8.0f;
     public float gravity = 3.0f;
     public float jumppower = 10.0f;
-    public float jumpCount=0;
+    public float jumpCount;
     public const int jumpMax = 10;
     public float accel = 0.0f;
 
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
         //move and stay
         float horizontalKey = Input.GetAxis("Horizontal");
-        float jumpKey = Input.GetKeyDown(KeyCode.LeftShift);
+        float jumpKey = Input.GetAxis("Vertical");
         float xSpeed = 0.0f;
         float ySpeed = -gravity;
 
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
         if (isJump)
         {
-            ySpeed = jumppower + (accel / 2) - 0.5 * jumpCount;
+            ySpeed = jumppower + (accel / 2) - (float)0.5 * jumpCount;
             if (jumpCount < jumpMax)
             {
                 jumpCount++;
