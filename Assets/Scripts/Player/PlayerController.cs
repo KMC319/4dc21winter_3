@@ -124,6 +124,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        //toripack
         if (toripack > 0)
         {
             if (Input.GetKeyDown(KeyCode.X))
