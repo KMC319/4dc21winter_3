@@ -5,11 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - belt
-<<<<<<< HEAD
   - meteo
-=======
   - Ground
->>>>>>> 4433de4fceda025b862a6d40fbf8f26a97c51104
+  - HotGimmick
+  - ColdGimmick
   layers:
   - Default
   - TransparentFX
@@ -21,7 +20,7 @@ TagManager:
   - Ground
   - Liquid
   - Wall
-  - 
+  - Pin
   - 
   - 
   - 
