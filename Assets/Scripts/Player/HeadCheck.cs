@@ -4,7 +4,7 @@ using UnityEngine;
 
 //player no  atama ni  korewo ireta object wo secchi
 
-public class HeadCheck : MonoBehaviour
+public class GroundCheck : MonoBehaviour
 {
     private string groundTag = "Ground";
     private bool isGround = faise;
@@ -34,7 +34,7 @@ public class HeadCheck : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == groundTag)
         {
@@ -42,7 +42,7 @@ public class HeadCheck : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == groundTag)
         {
