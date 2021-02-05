@@ -33,7 +33,7 @@ public class KnifeManager : MonoBehaviour
             caveat.transform.position = new Vector2(Camera.transform.position.x+ CaveatPosition[CaveatNum].x, CaveatPosition[CaveatNum].y);
             //経過時間を初期化して再度時間計測を始める
             time = 0f;
-            interval = Random.Range(3f, 10f);
+            interval = Random.Range(intervalMin, intervalMax);
         }
     }
 }

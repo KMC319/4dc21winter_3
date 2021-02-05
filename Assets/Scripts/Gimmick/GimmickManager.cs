@@ -37,7 +37,7 @@ public class GimmickManager : MonoBehaviour
             meteor.transform.position = new Vector2(Camera.transform.position.x + meteorPosition[meteorNum].x, meteorPosition[meteorNum].y);
             //経過時間を初期化して再度時間計測を始める
             time = 0f;
-            interval = Random.Range(3f, 10f);
+            interval = Random.Range(intervalMin, intervalMax);
         }
     }
 }
