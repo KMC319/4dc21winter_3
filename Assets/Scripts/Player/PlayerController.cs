@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public GroundCheck head;
 
     public float speed = 8.0f;
-    public float gravity = 3.0;
+    public float gravity = 3.0f;
     public float jumppower = 10.0f;
     public float jumpCount=0;
     public const int jumpMax = 10;
@@ -21,12 +21,11 @@ public class PlayerController : MonoBehaviour
     private bool isGround = false;
     private bool isHead = false;
     private bool isJump = false;
-    private float jumpTime = 0.0f;
 
     void Start()
     {
-        anim = GetComponen <Animotor>();
-        rb = GetComponent<Rididbody2D>();
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
 

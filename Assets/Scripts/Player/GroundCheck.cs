@@ -7,7 +7,7 @@ using UnityEngine;
 public class GroundCheck : MonoBehaviour
 {
     private string groundTag = "Ground";
-    private bool isGround = faise;
+    private bool isGround = false;
     private bool isGroundEnter, isGroundStay, isGroundExit;
 
     //returning method to judge
@@ -35,7 +35,7 @@ public class GroundCheck : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == groundTag)
         {
@@ -43,7 +43,7 @@ public class GroundCheck : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == groundTag)
         {
