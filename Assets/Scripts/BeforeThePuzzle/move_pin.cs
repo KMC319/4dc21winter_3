@@ -10,20 +10,25 @@ public class move_pin : MonoBehaviour
     private Vector3 offset;
     private Vector3 tyousei;
 
+    private Vector2 startPos;
 
     // Start is called before the first frame update
     void Start()
     {
+        startPos = transform.position;
         rb = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if ((transform.position.x -startPos.x) * Mathf.Sign(transform.lossyScale.x) < 0) {
+            rb.velocity = Vector2.zero;
+            transform.position = startPos;
+        }
     }
 
-    // ’Ç‰Á
+    // ï¿½Ç‰ï¿½
     void OnMouseDown()
     {
        // this.screenPoint = Camera.main.WorldToScreenPoint(transform.position);
@@ -33,12 +38,12 @@ public class move_pin : MonoBehaviour
     }
     void OnMouseDrag()
     {
-
-        
-        rb.velocity = new Vector3(Input.GetAxisRaw("Mouse X") * 200, 0, 0);
+        if ((transform.position.x - startPos.x) * Mathf.Sign(transform.lossyScale.x) >= 0) {
+            rb.velocity = new Vector3(Mathf.Sign(Input.GetAxisRaw("Mouse X")) * 200, 0, 0);
+        }
     }
 }
-    // ’Ç‰Á
+    // ï¿½Ç‰ï¿½
     /*void OnMouseDrag()
     {
         Vector3 currentScreenPoint = new Vector3(Input.mousePosition.x, screenPoint.y, screenPoint.z);

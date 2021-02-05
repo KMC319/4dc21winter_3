@@ -1,43 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
+using ProjectSystem;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PuzzleGameManager : MonoBehaviour
 {
-    public  int Chicken_count = 5;
-    public int Yakitori_count = 0;
-    public GameObject Chicken_Number;
-    public GameObject Yakitori_Number;
-    public static int a;
-    public static int b;
+    public static int Chicken_count = 5;
+    public static int Yakitori_count = 0;
+    public static int Toripack_count = 0;
+    public Text Chicken_Number;
+    public Text Yakitori_Number;
+    public Text Toripack_Number;
+
+    public int StartLife;
+    
+    /*public static int a;
+    public static int b;*/
 
    
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
+        Chicken_count = StartLife;
+        Yakitori_count = Toripack_count = 0;
     }
 
     // Update is called once per frame
     void Update()
     { 
-      if(Chicken_count<=0)
+      if(Chicken_count<=0 && !SceneController.IsSceneChanging)
         {
-            Debug.Log("é∏îs");
+            SceneController.SceneMove(SceneName.GameOver).Forget();
         }
-        Text Chicken_text = Chicken_Number.GetComponent<Text>();
-        Chicken_text.text = "Å~" + Chicken_count;
+        Chicken_Number.text = "Å~" + Chicken_count;
 
-        Text Yakitori_text = Yakitori_Number.GetComponent<Text>();
-        Yakitori_text.text = "Å~" + Yakitori_count;
+        Yakitori_Number.text = "Å~" + Yakitori_count;
 
-        a = Chicken_count;
-        b = Yakitori_count;
+        Toripack_Number.text = $"x{Toripack_count}";
+
+        /*a = Chicken_count;
+        b = Yakitori_count;*/
     }
 
-    public static int getA()
+    /*public static int getA()
     {
         return a;
     }
@@ -45,5 +48,5 @@ public class PuzzleGameManager : MonoBehaviour
     public static int getB()
     {
         return b;
-    }
+    }*/
 }

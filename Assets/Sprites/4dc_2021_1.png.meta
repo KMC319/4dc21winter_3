@@ -14,6 +14,24 @@ TextureImporter:
   - first:
       213: -7439964620941745073
     second: 4dc_2021_1_3
+  - first:
+      213: 625407688561006772
+    second: 4dc_2021_1_4
+  - first:
+      213: -6674395709647955954
+    second: 4dc_2021_1_5
+  - first:
+      213: 6292905196232389255
+    second: 4dc_2021_1_6
+  - first:
+      213: 8743578679158911476
+    second: 4dc_2021_1_7
+  - first:
+      213: 1191596344423749460
+    second: 4dc_2021_1_8
+  - first:
+      213: -293976369163550103
+    second: 4dc_2021_1_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -148,10 +166,10 @@ TextureImporter:
       name: 4dc_2021_1_2
       rect:
         serializedVersion: 2
-        x: 1034
-        y: 3262
-        width: 1021
-        height: 797
+        x: 1189
+        y: 3330
+        width: 751
+        height: 600
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,12 +187,12 @@ TextureImporter:
       name: 4dc_2021_1_3
       rect:
         serializedVersion: 2
-        x: 182
+        x: 176
         y: 1272
         width: 870
         height: 969
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -182,6 +200,132 @@ TextureImporter:
       bones: []
       spriteID: f442b4b889fefb890800000000000000
       internalID: -7439964620941745073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4dc_2021_1_4
+      rect:
+        serializedVersion: 2
+        x: 2094
+        y: 3330
+        width: 751
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b81a7caaf4eda800800000000000000
+      internalID: 625407688561006772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4dc_2021_1_5
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 2593
+        width: 751
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e08da0ce678cf53a0800000000000000
+      internalID: -6674395709647955954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4dc_2021_1_6
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 2593
+        width: 750
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78234aa4fe3e45750800000000000000
+      internalID: 6292905196232389255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4dc_2021_1_7
+      rect:
+        serializedVersion: 2
+        x: 2094
+        y: 2593
+        width: 751
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f132f4bb7e675970800000000000000
+      internalID: 8743578679158911476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4dc_2021_1_8
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 1348
+        width: 476
+        height: 638
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4571809df86698010800000000000000
+      internalID: 1191596344423749460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4dc_2021_1_9
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 459
+        width: 585
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 962c5afbc069bebf0800000000000000
+      internalID: -293976369163550103
       vertices: []
       indices: 
       edges: []

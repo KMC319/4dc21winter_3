@@ -19,17 +19,17 @@ public class Birds_controller : MonoBehaviour {
         if(isDead) return;
         isDead = true;
         DeadAnim().Forget();
-        PuzzleGameManager gameManager = GameObject.Find("PuzzleGameManager").GetComponent<PuzzleGameManager>();
+        PuzzleGameManager.Chicken_count--;
         switch (deadType) {
             case PlayerDeadType.Hot:
-                gameManager.Yakitori_count++;
+                PuzzleGameManager.Yakitori_count++;
                 break;
             case PlayerDeadType.Cold:
+                PuzzleGameManager.Toripack_count++;
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(deadType), deadType, null);
         }
-        gameManager.Chicken_count--;
     }
 
     private async UniTaskVoid DeadAnim() {
