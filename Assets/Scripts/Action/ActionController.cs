@@ -16,7 +16,7 @@ namespace Action {
         private int chickenLife;
         public int yakitori;
         public int toripack;
-        private Animator currentPlayer;
+        private (PlayerController controller, Animator anim) currentPlayer;
 
         private void Awake() {
             chickenLife = PuzzleGameManager.Chicken_count;
@@ -30,10 +30,21 @@ namespace Action {
                 });
         }
 
+        private void Update() {
+            if (currentPlayer.controller != null && currentPlayer.controller.IsActive) {
+                transform.position = currentPlayer.controller.transform.position;
+            }
+        }
+
         private IEnumerator StartAnim() {
             var p = Instantiate(playerController, (Vector2) mainCamera.transform.position + (Vector2) spawnPoint, Quaternion.identity);
-            currentPlayer = p.GetComponent<Animator>();
-            yield return new WaitForSeconds(1f);
+            currentPlayer = (p, p.GetComponent<Animator>());
+            while (currentPlayer.controller.transform.position.x < 0) {
+                var pos = currentPlayer.controller.transform.position;
+                pos.x += currentPlayer.controller.speed * Time.deltaTime;
+                currentPlayer.controller.transform.position = pos;
+                yield return null;
+            }
             p.OnActive(this);
         }
 
@@ -49,16 +60,17 @@ namespace Action {
         private IEnumerator DeadAnim(PlayerDeadType deadType) {
             switch (deadType) {
                 case PlayerDeadType.Hot:
-                    currentPlayer.SetTrigger("hot");
+                    currentPlayer.anim.SetTrigger("hot");
                     break;
                 case PlayerDeadType.Cold:
-                    currentPlayer.SetTrigger("cold");
+                    currentPlayer.anim.SetTrigger("cold");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(deadType), deadType, null);
             }
 
             yield return new WaitForSeconds(1f);
+            Destroy(currentPlayer.anim.gameObject);
             StartCoroutine(StartAnim());
         }
     }

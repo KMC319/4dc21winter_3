@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb = null;
     private ActionController actionController;
+    private Animator anim;
     private SpriteRenderer spriteRenderer;
 
     public bool IsActive;
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public void OnActive(ActionController controller) {
         actionController = controller;
         IsActive = true;
+        isMuteki = false;
     }
     
     private IEnumerator Accel()
@@ -57,10 +59,11 @@ public class PlayerController : MonoBehaviour
         isMuteki = false;
     }
 
-    void Start()
-    {
+    void Start() {
+        isMuteki = true;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     
@@ -72,6 +75,7 @@ public class PlayerController : MonoBehaviour
         if(!IsActive) return;
         //get judge ground
         isGround = ground.IsGround();
+        anim.SetBool("IsGround", isGround);
 
         //move and stay
         float horizontalKey = Input.GetAxis("Horizontal");
@@ -82,15 +86,18 @@ public class PlayerController : MonoBehaviour
         {
             transform.localScale = new Vector3(1, 1, 1)*0.3f;
             xSpeed = speed + accel;
+            anim.SetBool("Walk", true);
         }
         else if (horizontalKey < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1)*0.3f;
             xSpeed = -speed - accel;
+            anim.SetBool("Walk", true);
         }
         else
         {
             xSpeed = 0.0f;
+            anim.SetBool("Walk", false);
         }
 
         rb.velocity = new Vector2(xSpeed, ySpeed);
@@ -120,6 +127,7 @@ public class PlayerController : MonoBehaviour
         }
         if (isJump)
         {
+            anim.SetTrigger("Jump");
             ySpeed = jumppower + (accel / 2);
             rb.velocity = new Vector2(xSpeed, ySpeed);
             isJump = false;
