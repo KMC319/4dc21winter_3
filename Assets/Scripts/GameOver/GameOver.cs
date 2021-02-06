@@ -43,18 +43,18 @@ public class GameOver : MonoBehaviour
     }
     public void Tomain()
     {
-        Debug.Log("replay");
+        //Debug.Log("replay");
         SceneController.SceneMove(SceneName.Puzzle).Forget();
     }
     public void Totitle()
     {
-        Debug.Log("title‚Ö");
+       // Debug.Log("title‚Ö");
         SceneController.SceneMove(SceneName.Title).Forget();
     }
 
     public void Toquit()
     {
-        Debug.Log("end");
+       // Debug.Log("end");
         Application.Quit();
     }
 }
