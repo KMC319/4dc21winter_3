@@ -20,6 +20,15 @@ TextureImporter:
   - first:
       213: 2050222534098653283
     second: 4dc_2021_3_5
+  - first:
+      213: -1024484524846362377
+    second: 4dc_2021_3_6
+  - first:
+      213: -1781209307584365743
+    second: 4dc_2021_3_7
+  - first:
+      213: -6611731981230515598
+    second: 4dc_2021_3_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -117,7 +126,7 @@ TextureImporter:
         width: 1827
         height: 2720
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -138,7 +147,7 @@ TextureImporter:
         width: 653
         height: 4093
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -201,7 +210,7 @@ TextureImporter:
         width: 210
         height: 210
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -222,7 +231,7 @@ TextureImporter:
         width: 1628
         height: 106
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -230,6 +239,69 @@ TextureImporter:
       bones: []
       spriteID: 360937f388ad37c10800000000000000
       internalID: 2050222534098653283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4dc_2021_3_6
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 645
+        width: 572
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0d5aaa0cc48c1f0800000000000000
+      internalID: -1024484524846362377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4dc_2021_3_7
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 483
+        width: 666
+        height: 114
+      alignment: 9
+      pivot: {x: 0.95531625, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15b70de629fd747e0800000000000000
+      internalID: -1781209307584365743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4dc_2021_3_8
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 315
+        width: 734
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a5aa42bc86e34a0800000000000000
+      internalID: -6611731981230515598
       vertices: []
       indices: 
       edges: []
