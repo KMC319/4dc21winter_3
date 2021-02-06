@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: SoundDatabase
   m_EditorClassIdentifier: 
   chickenDead: {fileID: 8300000, guid: 91ed057c2c7c5d442a104f695073f28b, type: 3}
+  fault: {fileID: 8300000, guid: ee8b320af71f2bf4fbe2ed47007767be, type: 3}
+  chicken: {fileID: 8300000, guid: 0f73e5db7a9ac014490b6ebdbe61dc23, type: 3}
