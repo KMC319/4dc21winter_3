@@ -768,7 +768,6 @@ GameObject:
   m_Component:
   - component: {fileID: 398940219}
   - component: {fileID: 398940216}
-  - component: {fileID: 398940218}
   - component: {fileID: 398940217}
   m_Layer: 0
   m_Name: Camera3
@@ -834,14 +833,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 598336590}
   RATE: 0.3
---- !u!81 &398940218
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398940215}
-  m_Enabled: 1
 --- !u!4 &398940219
 Transform:
   m_ObjectHideFlags: 0
@@ -1034,7 +1025,6 @@ GameObject:
   m_Component:
   - component: {fileID: 544676577}
   - component: {fileID: 544676576}
-  - component: {fileID: 544676575}
   m_Layer: 0
   m_Name: Camera5
   m_TagString: Untagged
@@ -1042,14 +1032,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &544676575
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 544676574}
-  m_Enabled: 1
 --- !u!20 &544676576
 Camera:
   m_ObjectHideFlags: 0
@@ -1867,7 +1849,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1082648899}
   - component: {fileID: 1082648898}
-  - component: {fileID: 1082648897}
   m_Layer: 0
   m_Name: Camera4
   m_TagString: Untagged
@@ -1875,14 +1856,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1082648897
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082648896}
-  m_Enabled: 1
 --- !u!20 &1082648898
 Camera:
   m_ObjectHideFlags: 0
@@ -2435,7 +2408,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1701956502}
   - component: {fileID: 1701956501}
-  - component: {fileID: 1701956500}
   - component: {fileID: 1701956499}
   m_Layer: 0
   m_Name: Camera2
@@ -2458,14 +2430,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 598336590}
   RATE: 0.12
---- !u!81 &1701956500
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701956498}
-  m_Enabled: 1
 --- !u!20 &1701956501
 Camera:
   m_ObjectHideFlags: 0
