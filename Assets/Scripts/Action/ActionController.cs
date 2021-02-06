@@ -66,10 +66,10 @@ namespace Action {
             switch (deadType) {
                 case PlayerDeadType.Hot:
                     yakitori++;
-                    toripack++;
                     currentPlayer.anim.SetTrigger("hot");
                     break;
                 case PlayerDeadType.Cold:
+                    toripack++;
                     currentPlayer.anim.SetTrigger("cold");
                     break;
                 default:
