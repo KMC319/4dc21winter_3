@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Action;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -14,18 +15,21 @@ public class PlayerController : MonoBehaviour
     public int jumpMax = 10;
     public float accel = 0.0f;
 
-    public int yakitori;
-    public int toripack;
-    public int Life;
 
     private Rigidbody2D rb = null;
-    private string enemyTag = "Enemy";
+    private ActionController actionController;
+    private SpriteRenderer spriteRenderer;
 
-
+    public bool IsActive;
     private bool isGround = false;
     private bool isJump = false;
     private bool isMuteki = false;
 
+    public void OnActive(ActionController controller) {
+        actionController = controller;
+        IsActive = true;
+    }
+    
     private IEnumerator Accel()
     {
         accel = 400.0f;
@@ -33,6 +37,8 @@ public class PlayerController : MonoBehaviour
         accel = 0.0f;
     }
 
+    private Color normalColor = Color.white;
+    private Color mutekiColor = new Color(1, 1, 1, 0.8f);
     private IEnumerator Muteki()
     {
         if (isMuteki)
@@ -40,30 +46,35 @@ public class PlayerController : MonoBehaviour
             yield break;
         }
         isMuteki = true;
-        for(int j = 0; j < 3; j++)
+        for(int j = 0; j < 10; j++)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.15f);
+            spriteRenderer.color = mutekiColor;
+            yield return new WaitForSeconds(0.15f);
+            spriteRenderer.color = normalColor;
         }
 
+        isMuteki = false;
     }
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-
+    
 
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+        if(!IsActive) return;
         //get judge ground
         isGround = ground.IsGround();
 
         //move and stay
         float horizontalKey = Input.GetAxis("Horizontal");
-        float jumpKey = Input.GetAxis("Vertical");
         float xSpeed = 0.0f;
         float ySpeed = rb.velocity.y;
 
@@ -115,21 +126,21 @@ public class PlayerController : MonoBehaviour
         }
 
         //yakitori
-        if (yakitori > 0)
+        if (actionController.yakitori > 0)
         {
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                yakitori--;
+                actionController.yakitori--;
                 StartCoroutine (Accel());
             }
         }
 
         //toripack
-        if (toripack > 0)
+        if (actionController.toripack > 0)
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
-                toripack--;
+                actionController.toripack--;
                 StartCoroutine(Muteki());
             }
         }
@@ -137,13 +148,14 @@ public class PlayerController : MonoBehaviour
     }
 
     //damage
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.tag == enemyTag)
-        {
-            Life--;
-            StartCoroutine(Muteki());
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (isMuteki) return;
+        if (collision.collider.tag == "HotGimmick") {
+            actionController.Dead(PlayerDeadType.Hot);
+            Destroy(this);
+        }else if (collision.collider.tag == "ColdGimmick") {
+            actionController.Dead(PlayerDeadType.Cold);
+            Destroy(this);
         }
     }
-
 }
