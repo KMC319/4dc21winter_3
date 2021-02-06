@@ -57,6 +57,7 @@ namespace Action {
 
         public void Dead(PlayerDeadType deadType) {
             chickenLife--;
+            PuzzleGameManager.Death_count++;
             StartCoroutine(DeadAnim(deadType));
             if (chickenLife <= 0) {
                 SceneController.SceneMove(SceneName.GameOver).Forget();

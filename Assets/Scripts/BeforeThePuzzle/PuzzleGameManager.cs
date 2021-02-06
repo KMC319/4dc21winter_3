@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PuzzleGameManager : MonoBehaviour
 {
     public static int Chicken_count = 5;
+    public static int Death_count = 0;
     public static int Yakitori_count = 0;
     public static int Toripack_count = 0;
     public Text Chicken_Number;
@@ -20,7 +21,7 @@ public class PuzzleGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         Chicken_count = StartLife;
-        Yakitori_count = Toripack_count = 0;
+        Death_count = Yakitori_count = Toripack_count = 0;
     }
 
     // Update is called once per frame

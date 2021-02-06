@@ -21,6 +21,7 @@ public class Birds_controller : MonoBehaviour {
         isDead = true;
         DeadAnim().Forget();
         PuzzleGameManager.Chicken_count--;
+        PuzzleGameManager.Death_count++;
         switch (deadType) {
             case PlayerDeadType.Hot:
                 PuzzleGameManager.Yakitori_count++;
