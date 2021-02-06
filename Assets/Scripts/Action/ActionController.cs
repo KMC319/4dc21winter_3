@@ -36,7 +36,7 @@ namespace Action {
         private IEnumerator StartAnim() {
             var p = Instantiate(playerController, (Vector2) mainCamera.transform.position + (Vector2) spawnPoint, Quaternion.identity);
             currentPlayer = (p, p.GetComponent<Animator>());
-            while (currentPlayer.controller.transform.position.x < 0) {
+            while (currentPlayer.controller.transform.position.x < transform.position.x) {
                 var pos = currentPlayer.controller.transform.position;
                 pos.x += currentPlayer.controller.speed * Time.deltaTime;
                 currentPlayer.controller.transform.position = pos;
