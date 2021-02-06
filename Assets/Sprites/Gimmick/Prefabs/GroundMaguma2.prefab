@@ -93,10 +93,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -74.87686}
+  m_Offset: {x: 0, y: -71.982025}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -107,7 +107,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 418, y: 79.24628}
+  m_Size: {x: 418, y: 85.03595}
   m_EdgeRadius: 0
 --- !u!1 &3995155107712025256
 GameObject:
@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 2351740520497158726}
   - component: {fileID: 3983188430298930555}
   - component: {fileID: 2882763862592995558}
+  - component: {fileID: 7244629498616837806}
   m_Layer: 0
   m_Name: GroundMaguma2
   m_TagString: Ground
@@ -206,7 +207,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -459.8805}
+  m_Offset: {x: -619.6306, y: -459.8805}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -217,5 +218,31 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1994.9999, y: 160.23901}
+  m_Size: {x: 755.7388, y: 160.23901}
+  m_EdgeRadius: 0
+--- !u!61 &7244629498616837806
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3995155107712025256}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 588.47705, y: -458.46466}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1994.9999, y: 1080}
+    newSize: {x: 1919.9999, y: 1080}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 818.0459, y: 163.07068}
   m_EdgeRadius: 0

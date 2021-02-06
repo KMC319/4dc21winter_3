@@ -11,7 +11,7 @@ public class Goal : MonoBehaviour
         if(collision.tag=="Player")
         {
             Debug.Log("aaaa");
-            SceneManager.LoadScene("HappyEnd");
+            //SceneManager.LoadScene("HappyEnd");
 
         }
     }

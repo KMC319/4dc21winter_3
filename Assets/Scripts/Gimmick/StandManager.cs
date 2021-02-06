@@ -30,8 +30,10 @@ public class StandManager : MonoBehaviour
             stand = Instantiate(standPrefabs[standLengthNum[i]]);
             stand.transform.position = new Vector2(1920 * i+stand.transform.position.x, stand.transform.position.y);
         }
+        /*
         stand = Instantiate(standPrefab);
         stand.transform.position = new Vector2(1920 * (standLengthNum.Length - 1), -89);
+        */
     }
 
     // Update is called once per frame

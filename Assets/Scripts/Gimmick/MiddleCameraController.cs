@@ -22,6 +22,6 @@ public class MiddleCameraController : MonoBehaviour
     void Update()
     {
         Vector3 v = (player.transform.position - startPlayerOffset) * RATE;
-        this.transform.position = startCameraPos + v;
+        this.transform.position = new Vector3(startCameraPos.x+v.x,startCameraPos.y,startCameraPos.z);
     }
 }
