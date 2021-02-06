@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 3983188430298930555}
   - component: {fileID: 2882763862592995558}
   - component: {fileID: 7244629498616837806}
+  - component: {fileID: 8719141434745057512}
   m_Layer: 0
   m_Name: GroundMaguma2
   m_TagString: Ground
@@ -245,4 +246,30 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 818.0459, y: 163.07068}
+  m_EdgeRadius: 0
+--- !u!61 &8719141434745057512
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3995155107712025256}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -32.655273, y: -497.65622}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1994.9999, y: 1080}
+    newSize: {x: 1919.9999, y: 1080}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 419.7119, y: 84.68756}
   m_EdgeRadius: 0
