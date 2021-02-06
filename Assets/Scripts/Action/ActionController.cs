@@ -15,7 +15,7 @@ namespace Action {
         private int chickenLife { get => PuzzleGameManager.Chicken_count; set => PuzzleGameManager.Chicken_count = value; }
         public int yakitori{ get => PuzzleGameManager.Yakitori_count; set => PuzzleGameManager.Yakitori_count = value; }
         public int toripack{ get => PuzzleGameManager.Toripack_count; set => PuzzleGameManager.Toripack_count = value; }
-        private (PlayerController controller, Animator anim) currentPlayer;
+        private (PlayerController controller, SpriteRenderer anim) currentPlayer;
 
         private bool isFirst;
         private readonly Subject<Unit> onGameStart = new Subject<Unit>();
@@ -39,7 +39,7 @@ namespace Action {
 
         private IEnumerator StartAnim() {
             var p = Instantiate(playerController, (Vector2) mainCamera.transform.position + (Vector2) spawnPoint, Quaternion.identity);
-            currentPlayer = (p, p.GetComponent<Animator>());
+            currentPlayer = (p, p.GetComponent<SpriteRenderer>());
             while (currentPlayer.controller.transform.position.x < transform.position.x) {
                 var pos = currentPlayer.controller.transform.position;
                 pos.x += currentPlayer.controller.speed * Time.deltaTime;
@@ -52,6 +52,7 @@ namespace Action {
                 onGameStart.OnNext(Unit.Default);
             }
             p.OnActive(this);
+            StartCoroutine(p.Muteki(1f));
         }
 
         public void Dead(PlayerDeadType deadType) {
@@ -66,17 +67,22 @@ namespace Action {
             switch (deadType) {
                 case PlayerDeadType.Hot:
                     yakitori++;
-                    currentPlayer.anim.SetTrigger("hot");
                     break;
                 case PlayerDeadType.Cold:
                     toripack++;
-                    currentPlayer.anim.SetTrigger("cold");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(deadType), deadType, null);
             }
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
+            var time = 0.5f;
+            while (time > 0f) {
+                var c = currentPlayer.anim.color;
+                c.a = time * 2;
+                currentPlayer.anim.color = c;
+                time -= Time.deltaTime;
+            }
             Destroy(currentPlayer.anim.gameObject);
             StartCoroutine(StartAnim());
         }

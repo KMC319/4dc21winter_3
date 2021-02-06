@@ -42,20 +42,20 @@ public class PlayerController : MonoBehaviour
     }
 
     private Color normalColor = Color.white;
-    private Color mutekiColor = new Color(1, 1, 1, 0.8f);
-    private IEnumerator Muteki()
+    private Color mutekiColor = new Color(1, 1, 1, 0.5f);
+    public IEnumerator Muteki(float time = 3f)
     {
         if (isMuteki)
         {
             yield break;
         }
         isMuteki = true;
-        for(int j = 0; j < 10; j++)
-        {
+        while (time > 0) {
             yield return new WaitForSeconds(0.15f);
             spriteRenderer.color = mutekiColor;
             yield return new WaitForSeconds(0.15f);
             spriteRenderer.color = normalColor;
+            time -= 0.3f;
         }
 
         isMuteki = false;
@@ -76,6 +76,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if(!IsActive) return;
+        if (transform.position.y <= -700) {
+            actionController.Dead(PlayerDeadType.Hot);
+            Destroy(this);
+        }
+        
         //get judge ground
         isGround = ground.IsGround();
         anim.SetBool("IsGround", isGround);
@@ -164,10 +169,12 @@ public class PlayerController : MonoBehaviour
         if (collision.collider.tag == "HotGimmick") {
             sePlayer.PlayOneShot(sePlayer.SoundDatabase.ChickenDead);
             actionController.Dead(PlayerDeadType.Hot);
+            anim.SetTrigger("hot");
             Destroy(this);
         }else if (collision.collider.tag == "ColdGimmick") {
             sePlayer.PlayOneShot(sePlayer.SoundDatabase.ChickenDead);
             actionController.Dead(PlayerDeadType.Cold);
+            anim.SetTrigger("cold");
             Destroy(this);
         }
     }
