@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Linq;
+using ProjectSystem;
 
 public class GameOver : MonoBehaviour
 {
@@ -30,14 +31,17 @@ public class GameOver : MonoBehaviour
     public void Tomain()
     {
         Debug.Log("replay");
+        SceneController.SceneMove(SceneName.Puzzle).Forget();
     }
     public void Totitle()
     {
         Debug.Log("title‚Ö");
+        SceneController.SceneMove(SceneName.Title).Forget();
     }
 
     public void Toquit()
     {
         Debug.Log("end");
+        Application.Quit();
     }
 }
