@@ -1672,7 +1672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b2165073720d5e4b9a5b468c9f3f1bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 2
+  interval: 10
   intervalMin: 0.5
   intervalMax: 5
   meteorPrefab: {fileID: 7873820272133665850, guid: 7db0c8f1515b88342bd8f2927478044e, type: 3}
@@ -1968,7 +1968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e24107fbdf5353458db2cf6309314ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 2
+  interval: 12
   intervalMin: 3
   intervalMax: 10
   CaveatPrefab: {fileID: 7764754243080329625, guid: 62e7d16f231036b4c886c9376421f226, type: 3}
