@@ -33,15 +33,28 @@ public class HappyEndTImer : MonoBehaviour
         audioSource.Play();
         audioSource.loop = true;
         mainText.SetActive(true);
-        if(killCount<=3)
+        if(killCount<=3) 
         {
-            Chicken1.SetActive(true);
+            StartCoroutine(ActiveWithFade(Chicken1.GetComponent<SpriteRenderer>(), 0.72f));
         }else if(killCount<=6)
         {
-            Chicken2.SetActive(true);
+            StartCoroutine(ActiveWithFade(Chicken2.GetComponent<SpriteRenderer>(), 0.72f));
         }else
         {
-            Chicken3.SetActive(true);
+            StartCoroutine(ActiveWithFade(Chicken3.GetComponent<SpriteRenderer>(), 1));
         }
     }
+
+    IEnumerator ActiveWithFade(SpriteRenderer sprite, float alpha ,float time = 2f) {
+        sprite.gameObject.SetActive(true);
+        var startTime = time;
+        while (time > 0) {
+            var c = sprite.color;
+            c.a = (1 - time / startTime) * alpha;
+            sprite.color = c;
+            time -= Time.deltaTime;
+            yield return null;
+        }
+    }
+    
 }

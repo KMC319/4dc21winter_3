@@ -221,7 +221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &125950836
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -763,7 +763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &886883807
 RectTransform:
   m_ObjectHideFlags: 0
@@ -945,9 +945,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainText: {fileID: 886883806}
   sound1: {fileID: 8300000, guid: fce0b80b0e173b44f883066a781783c8, type: 3}
-  Chicken1: {fileID: 0}
-  Chicken2: {fileID: 0}
-  Chicken3: {fileID: 0}
+  Chicken1: {fileID: 1375929483}
+  Chicken2: {fileID: 740788002}
+  Chicken3: {fileID: 125950835}
 --- !u!4 &951578425
 Transform:
   m_ObjectHideFlags: 0
