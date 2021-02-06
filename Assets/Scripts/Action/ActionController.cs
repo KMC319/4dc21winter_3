@@ -17,6 +17,11 @@ namespace Action {
         public int toripack{ get => PuzzleGameManager.Toripack_count; set => PuzzleGameManager.Toripack_count = value; }
         private (PlayerController controller, Animator anim) currentPlayer;
 
+        private bool isFirst;
+        private readonly Subject<Unit> onGameStart = new Subject<Unit>();
+        public IObservable<Unit> OnGameStart => onGameStart;
+        
+
         private void Awake() {
             Observable.Timer(TimeSpan.FromSeconds(deadPlayer.GetCurrentAnimatorStateInfo(0).length))
                 .First()
@@ -40,6 +45,11 @@ namespace Action {
                 pos.x += currentPlayer.controller.speed * Time.deltaTime;
                 currentPlayer.controller.transform.position = pos;
                 yield return null;
+            }
+
+            if (!isFirst) {
+                isFirst = true;
+                onGameStart.OnNext(Unit.Default);
             }
             p.OnActive(this);
         }
