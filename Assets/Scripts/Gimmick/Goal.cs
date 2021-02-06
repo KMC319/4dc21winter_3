@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ProjectSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,8 +12,7 @@ public class Goal : MonoBehaviour
         if(collision.tag=="Player")
         {
             Debug.Log("aaaa");
-            //SceneManager.LoadScene("HappyEnd");
-
+            SceneController.SceneMove(SceneName.GameClear).Forget();
         }
     }
 }
