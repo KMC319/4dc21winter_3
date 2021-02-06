@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
-using Cysharp.Threading.Tasks;
 using ProjectSystem;
 using UniRx;
-using UniRx.Triggers;
 using UnityEngine;
 
 namespace Action {
@@ -13,6 +11,7 @@ namespace Action {
         [SerializeField] private Vector3 spawnPoint;
         [SerializeField] private Camera mainCamera;
         [SerializeField] private AudioSource bgm;
+        
         private int chickenLife { get => PuzzleGameManager.Chicken_count; set => PuzzleGameManager.Chicken_count = value; }
         public int yakitori{ get => PuzzleGameManager.Yakitori_count; set => PuzzleGameManager.Yakitori_count = value; }
         public int toripack{ get => PuzzleGameManager.Toripack_count; set => PuzzleGameManager.Toripack_count = value; }

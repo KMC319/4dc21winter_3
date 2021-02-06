@@ -677,6 +677,7 @@ GameObject:
   - component: {fileID: 353546206}
   - component: {fileID: 353546208}
   - component: {fileID: 353546207}
+  - component: {fileID: 353546209}
   m_Layer: 5
   m_Name: YakitoriText
   m_TagString: Untagged
@@ -745,6 +746,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353546205}
   m_CullTransparentMesh: 1
+--- !u!114 &353546209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353546205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fbbf6638d154af1ad98403a750e29a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &398940215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,8 +1141,6 @@ MonoBehaviour:
   spawnPoint: {x: -1160, y: -264, z: 0}
   mainCamera: {fileID: 2063541050}
   bgm: {fileID: 964146844}
-  yakitori: 0
-  toripack: 0
 --- !u!4 &598336592
 Transform:
   m_ObjectHideFlags: 0
@@ -2165,8 +2176,9 @@ GameObject:
   - component: {fileID: 1447453601}
   - component: {fileID: 1447453603}
   - component: {fileID: 1447453602}
+  - component: {fileID: 1447453604}
   m_Layer: 5
-  m_Name: YakitoriText (1)
+  m_Name: ToripackText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2233,6 +2245,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447453600}
   m_CullTransparentMesh: 1
+--- !u!114 &1447453604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447453600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e8cb95fcf94abfb8e8e39d6521351c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1510836887
 GameObject:
   m_ObjectHideFlags: 0
@@ -2244,6 +2268,7 @@ GameObject:
   - component: {fileID: 1510836888}
   - component: {fileID: 1510836890}
   - component: {fileID: 1510836889}
+  - component: {fileID: 1510836891}
   m_Layer: 5
   m_Name: ChickenText
   m_TagString: Untagged
@@ -2312,6 +2337,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1510836887}
   m_CullTransparentMesh: 1
+--- !u!114 &1510836891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510836887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ea9e39f4c2414eaa5098f522ca8d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1574718394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2324,7 +2361,7 @@ GameObject:
   - component: {fileID: 1574718397}
   - component: {fileID: 1574718396}
   m_Layer: 5
-  m_Name: YakitoriImage (1)
+  m_Name: ToripackImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
