@@ -26,6 +26,7 @@ namespace Action {
             Observable.Timer(TimeSpan.FromSeconds(deadPlayer.GetCurrentAnimatorStateInfo(0).length))
                 .First()
                 .Subscribe(_ => {
+                    yakitori++;
                     bgm.Play();
                     StartCoroutine(StartAnim());
                 });
