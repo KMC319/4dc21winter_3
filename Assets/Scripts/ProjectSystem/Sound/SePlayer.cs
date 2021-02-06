@@ -6,6 +6,7 @@ namespace ProjectSystem.Sound {
     /// </summary>
     [RequireComponent(typeof(AudioSource))]
     public class SePlayer : MonoBehaviour {
+        public SoundDatabase SoundDatabase;
         private AudioSource audioSource;
 
         private void Awake() {

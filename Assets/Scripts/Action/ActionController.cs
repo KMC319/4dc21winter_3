@@ -13,15 +13,12 @@ namespace Action {
         [SerializeField] private Vector3 spawnPoint;
         [SerializeField] private Camera mainCamera;
         [SerializeField] private AudioSource bgm;
-        private int chickenLife;
-        public int yakitori;
-        public int toripack;
+        private int chickenLife { get => PuzzleGameManager.Chicken_count; set => PuzzleGameManager.Chicken_count = value; }
+        public int yakitori{ get => PuzzleGameManager.Yakitori_count; set => PuzzleGameManager.Yakitori_count = value; }
+        public int toripack{ get => PuzzleGameManager.Toripack_count; set => PuzzleGameManager.Toripack_count = value; }
         private (PlayerController controller, Animator anim) currentPlayer;
 
         private void Awake() {
-            chickenLife = PuzzleGameManager.Chicken_count;
-            yakitori = PuzzleGameManager.Yakitori_count;
-            toripack = PuzzleGameManager.Toripack_count;
             Observable.Timer(TimeSpan.FromSeconds(deadPlayer.GetCurrentAnimatorStateInfo(0).length))
                 .First()
                 .Subscribe(_ => {
@@ -53,13 +50,14 @@ namespace Action {
             StartCoroutine(DeadAnim(deadType));
             if (chickenLife <= 0) {
                 SceneController.SceneMove(SceneName.GameOver).Forget();
-                return;
             }
         }
 
         private IEnumerator DeadAnim(PlayerDeadType deadType) {
             switch (deadType) {
                 case PlayerDeadType.Hot:
+                    yakitori++;
+                    toripack++;
                     currentPlayer.anim.SetTrigger("hot");
                     break;
                 case PlayerDeadType.Cold:

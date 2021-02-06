@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a082bde17712479386ce896ab825e0d3, type: 3}
   m_Name: SoundDatabase
   m_EditorClassIdentifier: 
+  chickenDead: {fileID: 8300000, guid: 91ed057c2c7c5d442a104f695073f28b, type: 3}

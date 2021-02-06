@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using ProjectSystem.Sound;
 using UnityEngine;
 
 public class Birds_controller : MonoBehaviour {
@@ -33,6 +34,8 @@ public class Birds_controller : MonoBehaviour {
     }
 
     private async UniTaskVoid DeadAnim() {
+        var se = GetComponent<SePlayer>();
+        se.PlayOneShot(se.SoundDatabase.ChickenDead);
         GetComponent<SpriteRenderer>().sprite = deadBird;
         await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: gameObject.GetCancellationTokenOnDestroy());
         Destroy(gameObject);

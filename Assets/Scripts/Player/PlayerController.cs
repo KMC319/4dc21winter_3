@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Action;
+using ProjectSystem.Sound;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private ActionController actionController;
     private Animator anim;
     private SpriteRenderer spriteRenderer;
+    private SePlayer sePlayer;
 
     public bool IsActive;
     private bool isGround = false;
@@ -64,6 +66,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        sePlayer = GetComponent<SePlayer>();
     }
 
     
@@ -107,7 +110,7 @@ public class PlayerController : MonoBehaviour
 
         if (isGround)
         {
-            jumpCount = 3;
+            jumpCount = 2;
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 isJump = true;
@@ -159,9 +162,11 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (isMuteki) return;
         if (collision.collider.tag == "HotGimmick") {
+            sePlayer.PlayOneShot(sePlayer.SoundDatabase.ChickenDead);
             actionController.Dead(PlayerDeadType.Hot);
             Destroy(this);
         }else if (collision.collider.tag == "ColdGimmick") {
+            sePlayer.PlayOneShot(sePlayer.SoundDatabase.ChickenDead);
             actionController.Dead(PlayerDeadType.Cold);
             Destroy(this);
         }
