@@ -39,8 +39,9 @@ namespace Puzzle {
             if (output.texture == null) {
                 InitOutput();
             }
-            destinationTexture.Release();
+            
             var source = myCamera.targetTexture;
+            Graphics.Blit(source, destinationTexture, blurMaterial);
             var rtW = source.width / 4;
             var rtH = source.height / 4;
             var buffer = RenderTexture.GetTemporary(rtW, rtH, 0);
